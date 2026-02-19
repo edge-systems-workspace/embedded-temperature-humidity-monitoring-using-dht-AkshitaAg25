@@ -14,6 +14,7 @@
 #include <DHT.h>
 #define DHTPIN 2
 #define DHTTYPE DHT11
+int DHT11;
 DHT obj = DHT(DHTPIN, DHTTYPE);
 
 void setup() {
@@ -23,20 +24,20 @@ void setup() {
     Serial.println("DHT11 Sensor initialized");
 }
 
-// void loop() {
-//     // write your code here
-//     float temperature = obj.readTemperature();
-//     float humidity = obj.readHumidity();
-//     if (isnan(temperature) || isnan(humidity)) {
-//         Serial.println("Failed to read from DHT sensor!");
-//         delay(5000);
-//         return;
-//     }
-//     Serial.print("Temperature: ");
-//     Serial.print(temperature);
-//     Serial.println(" *C");
-//     Serial.print("Humidity: ");
-//     Serial.print(humidity);
-//     Serial.println("% | ");
-//     delay(5000);
-// }
+void loop() {
+    // write your code here
+    float temperature = obj.readTemperature();
+    float humidity = obj.readHumidity();
+    if (isnan(temperature) || isnan(humidity)) {
+        Serial.println("Failed to read from DHT sensor!");
+        delay(5000);
+        return;
+    }
+    Serial.print("Temperature: ");
+    Serial.print(temperature);
+    Serial.println(" *C");
+    Serial.print("Humidity: ");
+    Serial.print(humidity);
+    Serial.println("% | ");
+    delay(5000);
+}
