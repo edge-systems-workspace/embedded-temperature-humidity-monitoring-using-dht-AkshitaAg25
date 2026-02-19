@@ -15,13 +15,14 @@
 #define DHTPIN 2
 #define DHTTYPE DHT11
 DHT obj = DHT(DHTPIN, DHTTYPE);
-// void setup() {
-//     // write your initialization code here
-//     Serial.begin(9600);
-//     obj.begin();
-//     Serial.println("DHT11 Sensor initialized");
-// }
-//
+
+void setup() {
+    // write your initialization code here
+    Serial.begin(9600);
+    obj.begin();
+    Serial.println("DHT11 Sensor initialized");
+}
+
 // void loop() {
 //     // write your code here
 //     float temperature = obj.readTemperature();
